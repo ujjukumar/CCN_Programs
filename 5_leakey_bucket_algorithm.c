@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <unistd.h> // For sleep decleration
+
 void main() {
     int packets[8], i, j, clk, b_size, o_rate, i_rate, p_sz_rm = 0, p_sz, p_time;
 
@@ -29,7 +31,7 @@ void main() {
             printf("\nTransmission left:%d\n", p_sz_rm);
             p_time = rand() % 10;
             printf("Next packet will come at %d", p_time);
-            
+
             for (clk = 0; clk < p_time && p_sz_rm > 0; ++clk) {
                 printf("\nTime left %d---No packets to transmit!!\n", p_time - clk);
                 sleep(1);
