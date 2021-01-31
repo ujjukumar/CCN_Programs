@@ -24,27 +24,24 @@ void main()
 
     while (ilen % klen != 0) 
         inp[ilen++] = '-';
-        inp[ilen] = '\0';
+    inp[ilen] = '\0';
 
-   	// printf("Updated input: %s",inp);   
-
-    for(ch='A';ch<='Z';ch++)  
-        for(j=0;j<=klen;j++)   
-            if(toupper(key[j])==ch)    
-                for(i=j;i < ilen;i+=klen)     
+    for(ch='A'; ch<='Z'; ch++)
+        for(j=0; j<=klen; j++)
+            if(toupper(key[j]) == ch)    
+                for(i=j; i < ilen; i+=klen)
                     out[k++]=inp[i];  
     
     out[k]='\0';   
-    printf("\nThe encrypted output is: %s",out); 
+    printf("\nThe encrypted message is: %s",out); 
 
-   	//printf("\nEnter the encrypted message: ");       	
-    // gets(enc); 
-
+// Decryption part
     for (ch = 'A', k = 0; ch <= 'Z'; ch++)
         for (j = 0; j < klen; j++)
             if (toupper(key[j]) == ch)
                 for (i = j; i < ilen; i += klen) 
                     dec[i] = out[k++];
+    
     dec[tlen] = '\0';
 
     for (t = 0; t < tlen; t++)

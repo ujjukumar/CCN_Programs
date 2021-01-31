@@ -1,4 +1,4 @@
-/*Program to simulate bit stuffing &Destuffing where the flag byte is 01111110 */
+/*Program to simulate bit stuffing & destuffing where the flag byte is 01111110 */
 
 #include <stdio.h>
 #include <conio.h> 
@@ -37,7 +37,7 @@ int main() {
                 counter = 0;
             recd_array[k++] = array[j];
 
-            if (counter == 5) /*If five ones appear, delete the following zero */
+            if (counter == 5) /*If five ones appear, skip the following zero */
             {
                 ++j;
                 counter = 0;

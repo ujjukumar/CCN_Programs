@@ -1,12 +1,12 @@
-/*Program to demonstrate character stuffing */
+// Program to demonstrate character stuffing & destuffing
+
 #include <stdio.h>
 #include <conio.h>
 #define DLE 16
 #define STX 2
 #define ETX 3
 
-void main()
-{
+void main() {
     char ch;
     char array[50] = { DLE, STX };
     char destuff[50];
@@ -30,6 +30,7 @@ void main()
 
     array[i++] = DLE;
     array[i++] = ETX;
+
     printf("\nThe stuffed stream is \n");
     for (j = 0; j < i; ++j) {
         if (array[j] == DLE)
@@ -41,6 +42,9 @@ void main()
         else
             printf("%c ", array[j]);
     }
+
+// Destuffing part
+
     k = 0;
     printf("\nThe destuffed data stream is : \n");
     for (j = 2; j < i - 2; ++j) {

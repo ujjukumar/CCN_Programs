@@ -1,4 +1,5 @@
-/* C Program to compute polynomial code checksum */
+// C Program to compute polynomial CRC checksum
+
 #include <stdio.h>
 #include <math.h>
 #include <conio.h>
@@ -8,7 +9,6 @@
 int result[50];
 int gen[20] = { 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 }; //ccitt polynomial* x16 + x12 + x5 + 1
 int length;
-void calcrc();
 
 void calcrc() {
     int pos = 0, j, i;
